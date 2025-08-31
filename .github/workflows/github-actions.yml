@@ -53,6 +53,6 @@ jobs:
         key: ${{ secrets.KEY }}
         script: |
           # 최신 이미지 받기 + eureka 서비스만 교체
-          sudo docker compose -f docker-compose-msa.yml pull backend-eureka
-          sudo docker compose -f docker-compose-msa.yml up -d --no-deps backend-eureka
+          sudo docker compose -f msa/docker-compose.yml pull backend-eureka
+          sudo docker compose -f msa/docker-compose.yml up -d --no-deps backend-eureka
           docker image prune -f
